@@ -56,7 +56,7 @@ class VanillaEnchant{
 	
 	protected function getEnchantmentLevelOfArmors(Player $player, Int $id): Int{
 		 $return = 0;
-	    foreach($player->getInventory()->getArmorContents() as $armor){
+	    foreach($player->getArmorInventory()->getContents() as $armor){
 	       if($armor->hasEnchantment($id)){
 		      $return += $armor->getEnchantment($id)->getLevel();
 		    }
